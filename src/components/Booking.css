@@ -1,0 +1,166 @@
+.booking-page { min-height: 80vh; }
+.page-hero-content .display-xl em { font-style: italic; color: var(--teal-600); }
+
+/* ── Step Indicator ── */
+.step-indicator {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2rem;
+  padding: 0 .5rem;
+  position: relative;
+}
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+.step-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--slate-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--slate-500);
+  transition: background .3s, color .3s;
+  z-index: 1;
+  position: relative;
+}
+.step-item.active .step-circle {
+  background: var(--teal-600);
+  color: white;
+  box-shadow: 0 4px 12px rgba(8,115,129,.35);
+}
+.step-item.done .step-circle {
+  background: var(--lime-500);
+  color: white;
+}
+.step-label {
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  margin-top: .35rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.step-item.active .step-label { color: var(--teal-700); }
+.step-item.done .step-label { color: var(--lime-600); }
+
+.step-line {
+  position: absolute;
+  top: 17px;
+  left: calc(50% + 18px);
+  right: calc(-50% + 18px);
+  height: 2px;
+  background: var(--slate-200);
+  transition: background .3s;
+  z-index: 0;
+}
+.step-line.done { background: var(--lime-400); }
+
+/* ── Booking ── */
+.booking-section { background: var(--slate-50); }
+.booking-wrap { max-width: 680px; margin: 0 auto; }
+.booking-form { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.form-step { display: flex; flex-direction: column; gap: 1rem; }
+.step-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--teal-800);
+  margin-bottom: .25rem;
+}
+
+/* Use shared field styles from Contact.css */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ── Service Pills ── */
+.service-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: .5rem 0;
+}
+.service-pill {
+  padding: .5rem 1rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--slate-200);
+  background: var(--slate-50);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  cursor: pointer;
+  transition: all .2s;
+}
+.service-pill:hover {
+  border-color: var(--teal-400);
+  color: var(--teal-700);
+  background: var(--teal-50);
+}
+.service-pill.selected {
+  background: var(--teal-600);
+  border-color: var(--teal-600);
+  color: white;
+  box-shadow: var(--shadow-teal);
+}
+
+/* ── Form Actions ── */
+.form-actions { display: flex; justify-content: flex-end; padding-top: .5rem; }
+.form-actions.two { justify-content: space-between; }
+.form-actions button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ── Review ── */
+.review-grid {
+  background: var(--slate-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-100);
+  overflow: hidden;
+}
+.review-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--slate-100);
+  font-size: .875rem;
+}
+.review-item:last-child { border-bottom: none; }
+.review-highlight { background: var(--teal-50); }
+.review-label { font-weight: 700; color: var(--slate-500); white-space: nowrap; }
+.review-value { color: var(--slate-800); text-align: right; }
+.review-highlight .review-value { color: var(--teal-700); font-weight: 700; }
+.review-note {
+  font-size: .75rem;
+  color: var(--slate-400);
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 .5rem;
+}
+
+/* ── Success ── */
+.booking-success {
+  max-width: 500px;
+  margin: 5rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.success-icon { font-size: 4rem; animation: float 3s ease-in-out infinite; }
+.booking-success .display-lg { color: var(--teal-700); }
+.booking-success p {
+  color: var(--slate-500);
+  line-height: 1.8;
+  font-size: .9rem;
+}

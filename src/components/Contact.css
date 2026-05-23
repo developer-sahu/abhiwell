@@ -1,0 +1,96 @@
+.contact-hero .page-hero-content .display-xl em,
+.page-hero-content .display-xl em { font-style: italic; color: var(--teal-600); }
+
+/* ── Contact Cards ── */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 480px) { .contact-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .contact-cards { grid-template-columns: repeat(3, 1fr); } }
+
+.contact-card {
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+.contact-card-icon { font-size: 2.2rem; margin-bottom: .25rem; }
+.contact-card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--slate-900);
+}
+.contact-card-primary {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--teal-700);
+  word-break: break-all;
+}
+.contact-card-secondary {
+  font-size: .78rem;
+  color: var(--slate-500);
+  margin-bottom: .5rem;
+}
+
+/* ── Form Section ── */
+.contact-form-section { background: var(--slate-50); }
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .contact-form-grid { grid-template-columns: 1fr 1.4fr; gap: 3rem; }
+}
+.contact-form-info .display-lg em { font-style: italic; color: var(--teal-600); }
+.contact-info-desc {
+  color: var(--slate-500);
+  line-height: 1.8;
+  font-size: .9rem;
+  margin: 1rem 0 1.25rem;
+}
+.contact-hours {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--slate-100);
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .82rem;
+}
+.hours-day { font-weight: 600; color: var(--slate-700); }
+.hours-time { color: var(--slate-500); }
+.hours-24 { color: var(--teal-600); font-weight: 700; }
+
+/* ── Contact Form ── */
+.contact-form {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* ── Map ── */
+.map-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--slate-100);
+}

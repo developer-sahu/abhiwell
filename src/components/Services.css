@@ -1,0 +1,116 @@
+.page-hero-content .display-xl em { font-style: italic; color: var(--teal-600); }
+
+/* ── Service Flip Cards ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75rem;
+}
+@media (min-width: 640px) { .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+@media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } }
+
+.svc-flip {
+  perspective: 1000px;
+  cursor: pointer;
+  aspect-ratio: 1 / 1.1;
+}
+.svc-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .55s cubic-bezier(.4,0,.2,1);
+}
+.svc-flip-inner.flipped { transform: rotateY(180deg); }
+@media (hover: hover) {
+  .svc-flip:hover .svc-flip-inner { transform: rotateY(180deg); }
+  .svc-flip-inner.flipped { transform: rotateY(180deg); }
+}
+
+.svc-front, .svc-back {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+}
+.svc-front {
+  color: white;
+  gap: .5rem;
+}
+.svc-emoji { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+.svc-title {
+  font-family: var(--font-display);
+  font-size: clamp(.9rem, 2.5vw, 1.2rem);
+  line-height: 1.2;
+}
+.svc-hint {
+  font-size: .65rem;
+  opacity: .7;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-top: .25rem;
+}
+
+.svc-back {
+  background: white;
+  transform: rotateY(180deg);
+  border: 1px solid var(--slate-100);
+  box-shadow: var(--shadow-lg);
+  gap: .5rem;
+  justify-content: flex-start;
+  padding-top: 1.5rem;
+}
+.svc-emoji-sm { font-size: 1.5rem; }
+.svc-back-title {
+  font-family: var(--font-display);
+  font-size: clamp(.85rem, 2vw, 1.05rem);
+  color: var(--teal-700);
+  margin-bottom: .25rem;
+}
+.svc-desc {
+  font-size: clamp(.7rem, 1.6vw, .8rem);
+  color: var(--slate-500);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* ── Equipment ── */
+.equipment-section { background: var(--slate-50); }
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75rem;
+}
+@media (min-width: 480px) { .equipment-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px)  { .equipment-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; } }
+@media (min-width: 1024px) { .equipment-grid { grid-template-columns: repeat(5, 1fr); } }
+
+.equip-card {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+.equip-emoji { font-size: 2rem; }
+.equip-title {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--slate-700);
+  line-height: 1.3;
+}
+.equip-link {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--teal-600);
+}
+.equip-link:hover { text-decoration: underline; }

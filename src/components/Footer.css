@@ -1,0 +1,103 @@
+.site-footer {
+  background: var(--teal-950);
+  color: rgba(255,255,255,.85);
+}
+.footer-top { padding: 3rem 0 2rem; }
+@media (min-width: 768px) { .footer-top { padding: 4.5rem 0 3rem; } }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 900px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+/* Brand */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+.footer-logo-icon { flex-shrink: 0; }
+.footer-logo-brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: white;
+}
+.footer-logo-sub {
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--teal-300);
+}
+.footer-tagline {
+  font-size: .82rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.55);
+  max-width: 340px;
+  margin-bottom: 1.25rem;
+}
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.footer-contact-item {
+  font-size: .8rem;
+  color: rgba(255,255,255,.6);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  transition: color .2s;
+}
+.footer-contact-item:hover { color: var(--teal-300); }
+
+/* Columns */
+.footer-col-title {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal-300);
+  margin-bottom: 1rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.footer-link {
+  font-size: .82rem;
+  color: rgba(255,255,255,.6);
+  transition: color .2s;
+}
+.footer-link:hover { color: white; }
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 1.25rem 0;
+}
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem;
+  font-size: .75rem;
+  color: rgba(255,255,255,.4);
+}
+.footer-dev {
+  background: linear-gradient(90deg, var(--teal-300), var(--lime-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
